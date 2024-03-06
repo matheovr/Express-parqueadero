@@ -40,12 +40,13 @@ npm install
 4. Inicia el servidor: `npm run dev`
 
 ## Uso
-Una vez que el servidor esté en funcionamiento, puedes realizar solicitudes a la API utilizando herramientas como Postman o cURL. Aquí hay algunas rutas de ejemplo:
+Una vez que el servidor esté en funcionamiento, puedes realizar solicitudes a la API utilizando herramientas como Postman. Aquí hay algunas rutas de ejemplo:
 
 GET /api/registros: Obtener todos los registros de vehículos en el parqueadero.
 POST /api/registros: Crear un nuevo registro de vehículo en el parqueadero.
 GET /api/registros/:id: Obtener un registro específico por su ID.
-DELETE /api/registros/:id: Eliminar un registro del parqueadero.
+DELETE /api/registros/:id: Eliminar un registro del parqueadero de acuerdo a su ID.
+PATCH /api/registros/:id: Actualizar un registro del parqueadero de acuerdo a su ID.
 Recuerda ajustar la URL y los parámetros según sea necesario para tu entorno local.
 
 ## Contribución

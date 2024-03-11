@@ -12,10 +12,8 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
+    versionSpec: '14.x' # Recomiendo usar una versión más reciente de Node.js
   displayName: 'Install Node.js'
 
-- script: |
+- script:
     npm install
-    npm run build
-  displayName: 'npm install and build'

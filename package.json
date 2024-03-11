@@ -5,7 +5,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "displayName": "Run tests"
   },
   "author": "mateovr",
   "license": "ISC",

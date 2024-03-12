@@ -43,7 +43,7 @@ steps:
      universidad=$(echo .env | jq .Profesion.universidad.universidad2 .env)
      precio=$(echo .env | jq .Profesion.universidad.precio.universidad3 .env)
      
-     echo $nombre "es" $profesion "de la" $universidad "y gana" $precio"
+     echo "$nombre es $profesion de la $universidad y gana $precio"
 
     displayName: 'Primera tarea'
      

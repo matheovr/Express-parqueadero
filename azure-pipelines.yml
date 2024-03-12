@@ -31,5 +31,7 @@ steps:
 
   - script: |
       ls -la
-    displayName: 'Listar archivos '
+      cat .env
+    displayName: 'Listar archivos' 
+
 

@@ -38,10 +38,10 @@ steps:
     displayName: 'Listar archivos'
   
   - script: 
-     nombre = $(echo cat .env | jq -r Nombre[0].name)
-     profesion = $(echo cat .env | jq -r 'Profesion[0].primero')
-     universidad = $(echo cat .env | jq -r 'Profesion[1].universidad2.')
-     precio = $(echo cat .env | jq -r 'Profesion[1].precio[2]')
+     nombre = jq .Nombre[0].name .env
+     profesion = jq .Profesion.Name.primero .env
+     universidad = jq .Profesion.universidad.universidad2 .env
+     precio = jq .Profesion.universidad.precio.universidad3 .env
      
      echo "$nombre es $profesion de la $universidad y gana $precio"
 

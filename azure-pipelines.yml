@@ -34,7 +34,7 @@ steps:
 
   - script: |
       ls -la
-      json = cat .env
+      json: = cat .env
     displayName: 'Listar archivos'
   
   - script: 

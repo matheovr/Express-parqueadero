@@ -10,10 +10,26 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '14.x' # Recomiendo usar una versión más reciente de Node.js
-  displayName: 'Install Node.js'
+  - task: DownloadSecureFile@1 
+    inputs:
+      secureFile: 'parameters.json'
+    displayName: 'archivo parameters.json'
 
-- script:
-   npm install
+
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(System.DefaultWorkingDirectory)'
+    inputs:
+      SourceFolder: '$(Agent.TempDirectory)'
+      Contents: 'parameters.json'
+      TargetFolder: '$(System.DefaultWorkingDirectory)'
+
+  - task: CmdLine@2
+    displayName: 'dando nombre al archivo del enviroment de $(PROJECT_ID)'
+    inputs:
+      script: |
+        mv $(System.DefaultWorkingDirectory)/parameters.json $(System.DefaultWorkingDirectory)/.env 
+
+  - script: |
+      ls -la
+    displayName: 'Listar archivos '
+

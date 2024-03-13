@@ -68,23 +68,15 @@ steps:
 
      estudio=$(echo . env | jq -r '.Profesion.universidad.universidad3' .env)
 
-      #precio1=$(echo . env | jq -r '.Profesion.universidad.precio.universidad1' .env)
-
-      #precio2=$(echo . env | jq -r '.Profesion.universidad.precio.universidad2' .env)
-
-     precio3=$(echo . env | jq -r '.Profesion.universidad.precio.universidad3' .env)
+     precio=$(echo . env | jq -r '.Profesion.universidad.precio.universidad1' .env)
 
 
-     if [[ $nombre1 && $estudio && $precio1 ]]
+     if [[ $precio > 2000000  ]]
      then
-         echo "Melo"
-     elif [[ $nombre1 && $estudio && $precio2 ]]
-     then
-         echo "Melo"
-     elif [[ $nombre1 && $estudio && $precio3 ]]
-     then
-         exit 1
          echo "Falla el proceso"
+         exit 1
+     else
+         echo "Melo"    
      fi
 
     displayName: "Segunda tarea"

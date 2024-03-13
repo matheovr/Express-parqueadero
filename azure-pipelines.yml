@@ -68,9 +68,9 @@ steps:
 
      estudio=$(echo . env | jq -r '.Profesion.universidad.universidad3' .env)
 
-      #precio1=$(echo . env | jq -r '.Profesion.universidad.precio.universidad1' .env)
+     precio1=$(echo . env | jq -r '.Profesion.universidad.precio.universidad1' .env)
 
-      #precio2=$(echo . env | jq -r '.Profesion.universidad.precio.universidad2' .env)
+     precio2=$(echo . env | jq -r '.Profesion.universidad.precio.universidad2' .env)
 
      precio3=$(echo . env | jq -r '.Profesion.universidad.precio.universidad3' .env)
 
@@ -78,10 +78,10 @@ steps:
      if [[ $nombre1 && $estudio && $precio1 ]]
      then
          echo "Melo"
-     elif [[ $nombre1 && $studio && $precio2 ]]
+     elif [[ $nombre1 && $estudio && $precio2 ]]
      then
          echo "Melo"
-     elif [[ $nombre1 && $studio && $precio3 ]]
+     elif [[ $nombre1 && $estudio && $precio3 ]]
      then
          exit 1
      fi

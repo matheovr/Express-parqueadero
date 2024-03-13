@@ -82,7 +82,9 @@ steps:
      if [[ $nombre1 && $estudio && $precio3 ]]
      then
          exit 1
-     elif [[ $nombre1 && $estudio && $precio1 ]]
+     fi
+  - script: 
+     if [[ $nombre1 && $estudio && $precio1 ]]
      then
          echo "Melo"
      elif [[ $nombre1 && $studio && $precio2 ]]

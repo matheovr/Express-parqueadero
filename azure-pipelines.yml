@@ -84,6 +84,7 @@ steps:
      elif [[ $nombre1 && $estudio && $precio3 ]]
      then
          exit 1
+         echo "Falla el proceso"
      fi
 
     displayName: "Segunda tarea"

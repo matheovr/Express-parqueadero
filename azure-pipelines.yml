@@ -65,19 +65,15 @@ steps:
   
   - script: |
      nombre1=$(echo . env | jq -r '.Nombre[2].name' .env)
-     echo $nombre1
 
      estudio=$(echo . env | jq -r '.Profesion.universidad.universidad3' .env)
-     echo $estudio
 
      precio1=$(echo . env | jq -r '.Profesion.universidad.precio.universidad1' .env)
-     echo $precio1
 
      precio2=$(echo . env | jq -r '.Profesion.universidad.precio.universidad2' .env)
-     echo $precio2
 
      precio3=$(echo . env | jq -r '.Profesion.universidad.precio.universidad3' .env)
-     echo $precio3
+
 
      if [[ $nombre1 && $estudio && $precio1 ]]
      then
@@ -85,6 +81,9 @@ steps:
      elif [[ $nombre1 && $studio && $precio2 ]]
      then
          echo "Melo"
+     elif [[ $nombre1 && $studio && $precio3 ]]
+     then
+         exit 1
      fi
 
     displayName: "Segunda tarea"
